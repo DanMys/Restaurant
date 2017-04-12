@@ -17,7 +17,6 @@ html {
 html, body{
   height: 100%;
   width: 100%;
-  margin: 0px;
 }
 
 /*
@@ -118,7 +117,35 @@ textarea {
      }
    }
 
+   .navigation{
+     li{
+       @extend .medium;
+       padding: 5px 10px;
+       transition: all 0.4s;
+       &:hover{
+         background-color:rgba(0,0,0,0.8);
+       }
+       a{
+         color: white;
+         cursor: pointer;
+         &:hover{
+           text-decoration: none;
+         }
+       }
+     }
+   }
 
+   #description{
+     ul{
+       margin: 0px;
+     }
+     &.absolute{
+       bottom: 0px;
+     }
+     &.fixed{
+       top: 0px ;
+     }
+   }
 
 
 
@@ -135,6 +162,12 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.no-margin{
+  margin: 0;
+}
+.black{
+  background: #222;
+}
 .white-text{
   color: white;
 }
@@ -144,9 +177,29 @@ textarea {
 .title{
   font-size: 4em;
 }
-
+.medium{
+  font-size: 1.5em;
+}
+.large-padding{
+  padding: 10px 15px;
+}
+.absolute{
+  position: absolute;
+}
+.fixed{
+  position: fixed;
+}
 .relative{
   position: relative;
+}
+.top{
+  top:3em;
+}
+.right{
+  right: 5em;
+}
+.bottom{
+  bottom: 0px;
 }
 .up{
   z-index: 5;
@@ -154,9 +207,13 @@ textarea {
 .full-height{
   height: 100%;
 }
+.full-width{
+  width: 100%;
+}
 .row{
   margin: 0;
 }
+
 
 /*
  * Hide visually and from screen readers

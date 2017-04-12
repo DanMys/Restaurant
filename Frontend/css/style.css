@@ -13,8 +13,7 @@ html {
 
 html, body {
   height: 100%;
-  width: 100%;
-  margin: 0px; }
+  width: 100%; }
 
 /*
  * Remove text-shadow in selection highlight:
@@ -98,9 +97,35 @@ textarea {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
 
+.navigation li {
+  padding: 5px 10px;
+  transition: all 0.4s; }
+  .navigation li:hover {
+    background-color: rgba(0, 0, 0, 0.8); }
+  .navigation li a {
+    color: white;
+    cursor: pointer; }
+    .navigation li a:hover {
+      text-decoration: none; }
+
+#description ul {
+  margin: 0px; }
+
+#description.absolute {
+  bottom: 0px; }
+
+#description.fixed {
+  top: 0px; }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.no-margin {
+  margin: 0; }
+
+.black {
+  background: #222; }
+
 .white-text {
   color: white; }
 
@@ -110,14 +135,38 @@ textarea {
 .title {
   font-size: 4em; }
 
+.medium, .navigation li {
+  font-size: 1.5em; }
+
+.large-padding {
+  padding: 10px 15px; }
+
+.absolute {
+  position: absolute; }
+
+.fixed {
+  position: fixed; }
+
 .relative {
   position: relative; }
+
+.top {
+  top: 3em; }
+
+.right {
+  right: 5em; }
+
+.bottom {
+  bottom: 0px; }
 
 .up {
   z-index: 5; }
 
 .full-height {
   height: 100%; }
+
+.full-width {
+  width: 100%; }
 
 .row {
   margin: 0; }

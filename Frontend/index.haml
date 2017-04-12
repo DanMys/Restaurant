@@ -6,6 +6,7 @@
     %meta{name:"description", content:"Come rico y barato en el mejor restaurante de la ciudad"}
     %link{href:'https://fonts.googleapis.com/css?family=Dancing+Script', rel:'stylesheet', type:'text/css'}
     %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/bootstrap.css"}
     %link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css"}
     %link{rel:"stylesheet", href:"css/style.css"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
@@ -26,5 +27,34 @@
         %source{src:"video/Night-BBQ.webm", typ:"video/webm"}
     .row.full-height.middle-xs.center-xs.relative.up
       .col-xs-12
-        .box
-          %h1.white-text.dancing-script.title Restaurante
+        .box.white-text
+          %img{src:"img/logo.png", width:200}
+          %h1.dancing-script.title.no-margin Restaurante
+          %p#is-open
+            %i.glyphicon.glyphicon-time
+            Abierto Ahora
+      %nav.fixed.top.right.navigation.white-text#navigation
+        -menu = ["Inicio", "Menu", "Galeria", "Contacto", "Como Llegar"]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a{}= item
+      .absolute.black.large-padding.white-text.full-width#description
+        .row.middle-xs.center-xs
+          .col-xs-7.col-sm-6.white-text.medium
+            Atencion calida y comida preparada por artistas
+          .col-xs.hidden#sticky-navigation
+            .box
+              %nav.text-right.navigation
+                %ul.list-inline
+                  -menu.each do |item|
+                    %li
+                      %a{}= item
+    .full-height
+
+
+    %script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin:"anonymous"}
+    -# Verificar si carga jquery, y si no importe el que tenemos
+    %script
+      window.jQuery || document.write("<script src='js/jquery-3.2.0.min.js'><\script>")
+    %script{src:"js/main.js"}
