@@ -50,8 +50,27 @@
                   -menu.each do |item|
                     %li
                       %a{}= item
-    .full-height
+    .text-center.relative#menu
+      .absolute.white#menu-title
+        %h2.dancing-script.title Menu
+      -menu_photos = [{name: "Club Sandwich", image: "club-sandwich", pricing:"10.00"},
+                      {name: "Combo Hamburguesa", image: "combo", pricing:"50.00"},
+                      {name: "Hamburguesa", image: "hamburger", pricing:"20.00"},
+                      {name: "Hot Cakes", image: "hot-cakes", pricing:"30.00"},
+                      {name: "Panini", image: "panini", pricing:"15.00"},
+                      {name: "Papas", image: "papas", pricing:"10.00"},
+                      {name: "Club Sandwich", image: "club-sandwich", pricing:"10.00"},
+                      {name: "Hamburguesa", image: "hamburger", pricing:"20.00"}]
+      .row
+        -menu_photos.each do |photo|
+          .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(img/food/#{photo[:image]}-thumb.jpg)"}
+            -# interpolar
+            .screen
+              .row.middle-xs.full-height
+                .col-xs-12
+                  %h3.dancing-script.white-text.subtitle= photo[:name]
 
+                  %p.no-margin.white-text= photo[:pricing] + " USD"
 
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin:"anonymous"}
     -# Verificar si carga jquery, y si no importe el que tenemos
