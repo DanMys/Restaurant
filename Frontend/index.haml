@@ -1,3 +1,4 @@
+-gallery_images = ["club-sandwich.jpg","papas.jpg","hamburger.jpg","panini.jpg"]
 !!!5
 %html{class:"no-js", lang:"es"}
   %head
@@ -10,6 +11,7 @@
     %link{rel:"stylesheet", href:"https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.css"}
     %link{rel:"stylesheet", href:"css/style.css"}
     %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %meta{:"data-name" => "image-counter", content:"#{gallery_images.size - 1}"}
     %script{src:"js/modenizr.min.js"}
   %body
     ="<!--[if lt IE 9]->"
@@ -69,8 +71,12 @@
               .row.middle-xs.full-height
                 .col-xs-12
                   %h3.dancing-script.white-text.subtitle= photo[:name]
-
                   %p.no-margin.white-text= photo[:pricing] + " USD"
+    #gallery
+      .inner
+        -gallery_images.each do |image|
+          .image{style:"background-image:url(img/food/#{image});"}
+
 
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin:"anonymous"}
     -# Verificar si carga jquery, y si no importe el que tenemos

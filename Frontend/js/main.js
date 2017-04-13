@@ -1,8 +1,29 @@
 ;(function(){
 
   let sticky = false
+  let currentPosition = 0
+
+  // parse 
+  const imageCounter = $("[data-name='image-counter']").attr("content")
+
+  console.log(imageCounter);
+
   $("#sticky-navigation").removeClass("hidden")
   $("#sticky-navigation").slideUp(0)
+
+  setInterval(()=>{
+
+    if(currentPosition < imageCounter){
+      currentPosition++
+    }
+    else {
+      currentPosition=0
+    }
+
+    $("#gallery .inner").css({
+      left: "-"+currentPosition*100+"%"
+    })
+  },4000)
 
   // console.log($(window).height());
   // declaracion de una funcion $
@@ -33,6 +54,10 @@
     $("#description").removeClass("fixed").addClass("absolute")
     $("#navigation").slideDown("fast")
     $("#sticky-navigation").slideUp("fast")
+  }
+
+  function diHola() {
+    console.log("Hola mundo")
   }
 
   // $(window).scroll(()=>{
