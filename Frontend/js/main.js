@@ -1,3 +1,7 @@
+if(navigator.serviceWorker){
+	navigator.serviceWorker.register("../sw.js");
+}
+
 ;(function(){
 
   let sticky = false
@@ -15,7 +19,7 @@
       return false
   })
 
-  console.log(imageCounter);
+  // console.log(imageCounter);
 
   $("#sticky-navigation").removeClass("hidden")
   $("#sticky-navigation").slideUp(0)
@@ -41,13 +45,13 @@
 
     if(inBottom && !sticky){
       // mostrar la navecacion sticky
-      console.log("cambiar la navegacion")
+      // console.log("cambiar la navegacion")
       sticky = true
       stickNavigation()
     }
     else if(!inBottom && sticky){
       // ocultar la navegacion
-      console.log("regresar la navegacion")
+      // console.log("regresar la navegacion")
       sticky = false
       unStickNavigation()
     }

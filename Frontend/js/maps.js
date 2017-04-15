@@ -63,7 +63,7 @@
                   <span class="dancing-script medium">Restaurante</span>
                 `
 
-        console.log(duration_element)
+        // console.log(duration_element)
       }
     })
   })

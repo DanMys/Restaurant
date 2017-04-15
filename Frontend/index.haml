@@ -92,11 +92,14 @@
           Excepteur sint occaecat cupidatat non proident,
           sunt in culpa qui officia deserunt mollit anim id est laborum.
           %strong.dancing-script.medium - Chef Benito -
+          .large-padding.medium.black.white-text.text-center
+            Tambien puedes acceder a este sitio sin conexion a internet
     .black.white-text.full-height#contact
       .row.middle-xs.full-height
         .col-xs-12
           .box
-            %p.text-center.medium#info-contacto Presiona enter para llenar el campo correspondiente y enviarnos un correo.
+            %p.text-center.medium#info-contacto
+              Presiona enter para llenar el campo correspondiente y enviarnos un correo.
             %form{action:"https://formspree.io/respaldodan07@gmail.com", method:"POST",id:"contact-form",class:"step-form"}
               .row.center-xs
                 .col-xs-2.col-md-1.text-center
@@ -115,13 +118,13 @@
                       %input{type:"text",name:"name",placeholder:"Nombre",class:"input",required:true}
                     %fieldset.step
                       %textarea{name:"body",placeholder:"Mensaje",class:"input",required:true}
-                    %div
-                      %button{type:"submit",class:"btn"}
-                        Enviar
+                    -# %div
+                    -#   %button{type:"submit",class:"btn"}
+                    -#     Enviar
     #location
       #map
       #message.black.large-padding.white-text.text-center.medium
-        
+
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin:"anonymous"}
     -# Verificar si carga jquery, y si no importe el que tenemos
     %script
