@@ -118,13 +118,16 @@
                     %div
                       %button{type:"submit",class:"btn"}
                         Enviar
-
-
-
+    #location
+      #map
+      #message.black.large-padding.white-text.text-center.medium
+        
     %script{src:"https://code.jquery.com/jquery-3.2.1.min.js", integrity:"sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin:"anonymous"}
     -# Verificar si carga jquery, y si no importe el que tenemos
     %script
       window.jQuery || document.write("<script src='js/jquery-3.2.0.min.js'><\script>")
-    %script{src:"js/form_object.js"}
-    %script{src:"js/main.js"}
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCucNDRzgCf83IrhtI62wM5JQSF-GOolQ8"}
+    %script{src:"dist/maps.js"}
+    %script{src:"dist/form_object.js"}
+    %script{src:"dist/main.js"}
     %script{src:"dist/steps.js"}
