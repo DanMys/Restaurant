@@ -3,8 +3,17 @@
   let sticky = false
   let currentPosition = 0
 
-  // parse 
+  // parse
   const imageCounter = $("[data-name='image-counter']").attr("content")
+  const email = "respaldodan07@gmail.com"
+
+  $("#contact-form").on("submit",function(ev) {
+    ev.preventDefault()
+
+      sendForm($(this))
+
+      return false
+  })
 
   console.log(imageCounter);
 
@@ -56,9 +65,6 @@
     $("#sticky-navigation").slideUp("fast")
   }
 
-  function diHola() {
-    console.log("Hola mundo")
-  }
 
   // $(window).scroll(()=>{
   //   console.log("wiiiiiiiii scroll")
