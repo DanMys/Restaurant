@@ -31,33 +31,33 @@
         <source src="video/Night-BBQ.webm" typ="video/webm">
       </video>
     </div>
-    <div class="row full-height middle-xs center-xs relative up">
+    <div class="row full-height middle-xs center-xs relative up" id="home">
       <div class="col-xs-12">
         <div class="box white-text">
           <img src="img/logo.png" width="200">
           <h1 class="dancing-script title no-margin">Restaurante</h1>
           <p id="is-open">
             <i class="glyphicon glyphicon-time"></i>
-            Abierto Ahora
+            <span class="text">Abierto Ahora</span>
           </p>
         </div>
       </div>
       <nav class="fixed top right navigation white-text" id="navigation">
         <ul class="list-inline">
           <li>
-            <a>Inicio</a>
+            <a class="menu" href="#home">Inicio</a>
           </li>
           <li>
-            <a>Menu</a>
+            <a class="menu" href="#menu">Menu</a>
           </li>
           <li>
-            <a>Galeria</a>
+            <a class="menu" href="#gallery">Galeria</a>
           </li>
           <li>
-            <a>Contacto</a>
+            <a class="menu" href="#contact">Contacto</a>
           </li>
           <li>
-            <a>Como Llegar</a>
+            <a class="menu" href="#location">Como llegar</a>
           </li>
         </ul>
       </nav>
@@ -68,22 +68,23 @@
           </div>
           <div class="col-xs hidden" id="sticky-navigation">
             <div class="box">
-              <nav class="text-right navigation">
+              <nav class="text-right navigation" id="responsive-nav">
+                <i class="glyphicon glyphicon-menu-hamburger white-text subtitle glyphicon glyphicon-remove" id="menu-opener"></i>
                 <ul class="list-inline">
                   <li>
-                    <a>Inicio</a>
+                    <a class="menu-link" href="#home">Inicio</a>
                   </li>
                   <li>
-                    <a>Menu</a>
+                    <a class="menu-link" href="#menu">Menu</a>
                   </li>
                   <li>
-                    <a>Galeria</a>
+                    <a class="menu-link" href="#gallery">Galeria</a>
                   </li>
                   <li>
-                    <a>Contacto</a>
+                    <a class="menu-link" href="#contact">Contacto</a>
                   </li>
                   <li>
-                    <a>Como Llegar</a>
+                    <a class="menu-link" href="#location">Como llegar</a>
                   </li>
                 </ul>
               </nav>
@@ -219,17 +220,14 @@
             </p>
             <form action="https://formspree.io/respaldodan07@gmail.com" class="step-form" id="contact-form" method="POST">
               <div class="row center-xs">
-                <div class="col-xs-2 col-md-1 text-center">
+                <div class="col-xs-12 col-sm-2 col-md-1 first-sm">
                   <div class="box">
                     <div class="path-step active"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                     <div class="path-step"></div>
-                    <br>
                   </div>
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-12 col-sm-3 first-xs">
                   <div class="box">
                     <fieldset class="step active">
                       <input class="input" name="email" placeholder="Correo electronico" required type="email">
@@ -257,9 +255,6 @@
       window.jQuery || document.write("<script src='js/jquery-3.2.0.min.js'><\script>")
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCucNDRzgCf83IrhtI62wM5JQSF-GOolQ8"></script>
-    <script src="dist/maps.js"></script>
-    <script src="dist/form_object.js"></script>
-    <script src="dist/main.js"></script>
-    <script src="dist/steps.js"></script>
+    <script src="dist/app.js"></script>
   </body>
 </html>

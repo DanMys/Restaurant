@@ -23,6 +23,12 @@ if(navigator.serviceWorker){
 
   $("#sticky-navigation").removeClass("hidden")
   $("#sticky-navigation").slideUp(0)
+	checkScroll()
+	isOpen()
+
+	$("#menu-opener").on("click",toggleNav)
+
+	$(".menu-link").on("click",toggleNav)
 
   setInterval(()=>{
 
@@ -40,22 +46,49 @@ if(navigator.serviceWorker){
 
   // console.log($(window).height());
   // declaracion de una funcion $
-  $(window).scroll(function(){
-    const inBottom = isInBottom()
-
-    if(inBottom && !sticky){
-      // mostrar la navecacion sticky
-      // console.log("cambiar la navegacion")
-      sticky = true
-      stickNavigation()
-    }
-    else if(!inBottom && sticky){
-      // ocultar la navegacion
-      // console.log("regresar la navegacion")
-      sticky = false
-      unStickNavigation()
-    }
+  $(window).scroll(function(checkScroll){
+		// const inBottom = isInBottom()
+		//
+		// if(inBottom && !sticky){
+		// 	// mostrar la navecacion sticky
+		// 	// console.log("cambiar la navegacion")
+		// 	sticky = true
+		// 	stickNavigation()
+		// }
+		// else if(!inBottom && sticky){
+		// 	// ocultar la navegacion
+		// 	// console.log("regresar la navegacion")
+		// 	sticky = false
+		// 	unStickNavigation()
+		// }
   })
+
+	function checkScroll() {
+		const inBottom = isInBottom()
+
+		if(inBottom && !sticky){
+			sticky = true
+			stickNavigation()
+		}
+		else if(!inBottom && sticky){
+			sticky = false
+			unStickNavigation()
+		}
+	}
+
+	function isOpen() {
+		// Reloj de 24
+		let date = new Date()
+		const current_hour = date.getHours()
+		if(current_hour < 17 || current_hour > 23){
+			$("#is-open .text").html("Cerrado ahora <br> Abierto de 5:00PM a 11:00PM")
+		}
+	}
+
+	function toggleNav() {
+		$("#responsive-nav ul").toggleClass("active")
+		$("#menu-opener").toggleClass("glyphicon-menu-hamburger")
+	}
 
   function stickNavigation() {
     $("#description").addClass("fixed").removeClass("absolute")

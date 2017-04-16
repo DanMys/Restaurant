@@ -27,31 +27,34 @@
       %video{autoplay:true, loop:true, width:"1280", height:"720", poster:"video/Night-BBQ.jpg"}
         %source{src:"video/Night-BBQ.mp4", typ:"video/mp4"}
         %source{src:"video/Night-BBQ.webm", typ:"video/webm"}
-    .row.full-height.middle-xs.center-xs.relative.up
+    .row.full-height.middle-xs.center-xs.relative.up#home
       .col-xs-12
         .box.white-text
           %img{src:"img/logo.png", width:200}
           %h1.dancing-script.title.no-margin Restaurante
           %p#is-open
             %i.glyphicon.glyphicon-time
-            Abierto Ahora
+            %span.text Abierto Ahora
       %nav.fixed.top.right.navigation.white-text#navigation
-        -menu = ["Inicio", "Menu", "Galeria", "Contacto", "Como Llegar"]
+        -menu = [{title:"Inicio",link:"#home"},{title:"Menu",link:"#menu"},
+           {title:"Galeria",link:"#gallery"},{title:"Contacto",link:"#contact"},
+            {title:"Como llegar",link:"#location"}]
         %ul.list-inline
           -menu.each do |item|
             %li
-              %a{}= item
+              %a.menu{href:item[:link]}= item[:title]
       .absolute.black.large-padding.white-text.full-width#description
         .row.middle-xs.center-xs
           .col-xs-7.col-sm-6.white-text.medium
             Atencion calida y comida preparada por artistas
           .col-xs.hidden#sticky-navigation
             .box
-              %nav.text-right.navigation
+              %nav.text-right.navigation#responsive-nav
+                %i.glyphicon.glyphicon-menu-hamburger.white-text.subtitle.glyphicon.glyphicon-remove#menu-opener
                 %ul.list-inline
                   -menu.each do |item|
                     %li
-                      %a{}= item
+                      %a.menu-link{href:item[:link]}= item[:title]
     .text-center.relative#menu
       .absolute.white#menu-title
         %h2.dancing-script.title Menu
@@ -102,15 +105,14 @@
               Presiona enter para llenar el campo correspondiente y enviarnos un correo.
             %form{action:"https://formspree.io/respaldodan07@gmail.com", method:"POST",id:"contact-form",class:"step-form"}
               .row.center-xs
-                .col-xs-2.col-md-1.text-center
+                .col-xs-12.col-sm-2.col-md-1.first-sm
                   .box
                     -3.times do |i|
                       -if i == 0
                         .path-step.active
                       -else
                         .path-step
-                      %br
-                .col-xs-5
+                .col-xs-12.col-sm-3.first-xs
                   .box
                     %fieldset.step.active
                       %input{type:"email",name:"email",placeholder:"Correo electronico",class:"input",required:true}
@@ -130,7 +132,4 @@
     %script
       window.jQuery || document.write("<script src='js/jquery-3.2.0.min.js'><\script>")
     %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCucNDRzgCf83IrhtI62wM5JQSF-GOolQ8"}
-    %script{src:"dist/maps.js"}
-    %script{src:"dist/form_object.js"}
-    %script{src:"dist/main.js"}
-    %script{src:"dist/steps.js"}
+    %script{src:"dist/app.js"}
